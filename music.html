@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Listen to music by The Advocates Rise" />
+  <title>Music | The Advocates Rise</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --black: #000;
+      --gold: #FFD700;
+      --red: #cc0000;
+      --white: #f0f0f0;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      margin: 0;
+      background: var(--black);
+      color: var(--white);
+    }
+
+    header {
+      background: var(--black);
+      text-align: center;
+      padding: 1rem;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    header h1 {
+      color: var(--gold);
+      margin: 0;
+      text-shadow: 1px 1px 4px rgba(204, 0, 0, 0.5);
+    }
+
+    /* NAVIGATION */
+    nav {
+      margin-top: 1rem;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: inline-flex;
+      justify-content: center;
+      gap: 1.5rem;
+      position: relative;
+    }
+
+    nav li {
+      position: relative;
+    }
+
+    nav a {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem;
+      display: inline-block;
+    }
+
+    nav a::after {
+      content: '';
+      display: block;
+      height: 2px;
+      background: var(--red);
+      transition: width 0.3s ease;
+      width: 0%;
+      margin: auto;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* DROPDOWN */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: var(--black);
+      border: 1px solid var(--gold);
+      min-width: 160px;
+      z-index: 1000;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: var(--gold);
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #1a1a1a;
+      color: var(--red);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    main {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    section {
+      margin-bottom: 3rem;
+      padding-left: 1rem;
+      border-left: 3px solid rgba(204, 0, 0, 0.2);
+    }
+
+    h2 {
+      color: var(--gold);
+      border-bottom: 2px solid rgba(204, 0, 0, 0.4);
+      display: inline-block;
+      padding-bottom: 0.2rem;
+    }
+
+    .album-art {
+      width: 250px;
+      border: 2px solid var(--gold);
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .lyrics {
+      font-size: 0.9rem;
+      color: var(--white);
+      max-width: 600px;
+      margin: 1rem auto;
+      line-height: 1.5;
+    }
+
+    iframe {
+      border: 2px solid var(--gold);
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    .release-date {
+      color: var(--gold);
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background: var(--gold);
+      color: var(--black);
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      border: none;
+      transition: background 0.3s ease, color 0.3s ease;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    .btn:hover {
+      background: #1a1a1a;
+      color: var(--gold);
+    }
+
+    footer {
+      background: var(--black);
+      text-align: center;
+      padding: 1rem;
+      border-top: 2px solid var(--gold);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a::before {
+      content: "▶ ";
+      color: var(--red);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The Advocates Rise</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="tour.html">Tour</a></li>
+        <li><a href="shop.html">Shop</a></li>
+
+        <li class="dropdown">
+          <a href="fanclub.html">Fan Club</a>
+          <ul class="dropdown-content">
+            <li><a href="fanclub.html#join">Join</a></li>
+            <li><a href="fanclub.html#perks">Perks</a></li>
+            <li><a href="fanclub.html#members">Members</a></li>
+          </ul>
+        </li>
+
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>New Single: "Survive"</h2>
+      <img src="images/survive-art.jpg" alt="Survive Album Art" class="album-art">
+      <p class="release-date">Released: September 2025</p>
+
+      <iframe width="400" height="225" 
+              src="https://www.youtube.com/embed/GBgqpAIVipw" 
+              allowfullscreen></iframe>
+
+      <div class="lyrics">
+        <p><strong>Lyrics:</strong></p>
+        <p>I’m restless, so I’m tearing away<br>
+		Away from your lies, into the light<br>
+		I'm done believing you’ll fix this<br>
+		Let me breath, let me fly away<br>
+		Away from the games, far from the shame<br>
+		I’m left to survive</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Album: Friction"</h2>
+      <img src="images/awakened-ep.jpg" alt="Awakened EP Art" class="album-art">
+      <p class="release-date">Released: July 2025</p>
+
+      <iframe style="border: 0; width: 350px; height: 470px;" 
+              src="https://bandcamp.com/EmbeddedPlayer/album=1234567890/size=large/bgcol=000000/linkcol=FFD700/tracklist=true/artwork=small" 
+              seamless></iframe>
+    </section>
+
+    <section>
+      <h2>Youtube Playlist</h2>
+      <iframe style="border-radius:12px" 
+              src="https://music.youtube.com/playlist?list=PLKKNJO5-wO5JJZJ8faUP1-z6m_9AQZxxd" 
+              width="100%" height="152" 
+              frameBorder="0" 
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+              loading="lazy"></iframe>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 The Advocates Rise. All rights reserved.</p>
+    <p>
+      <a href="https://youtube.com/TheAdvocatesRise" target="_blank">YouTube</a>
+    </p>
+  </footer>
+</body>
+</html>
