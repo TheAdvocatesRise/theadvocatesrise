@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Official website for The Advocates Rise">
+  <title>The Advocates Rise</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #000;
+      --gold: #FFD700;
+      --red: #cc0000;
+      --white: #f0f0f0;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      margin: 0;
+      background: var(--black);
+      color: var(--white);
+    }
+
+    header {
+      background: var(--black);
+      text-align: center;
+      padding: 1rem;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    header h1 {
+      color: var(--gold);
+      margin: 0;
+      text-shadow: 1px 1px 4px rgba(204, 0, 0, 0.5);
+    }
+
+    /* === NAVIGATION STYLES === */
+    nav {
+      margin-top: 1rem;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: inline-flex;
+      justify-content: center;
+      gap: 1.5rem;
+      position: relative;
+    }
+
+    nav li {
+      position: relative;
+    }
+
+    nav a {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem;
+      display: inline-block;
+    }
+
+    nav a::after {
+      content: '';
+      display: block;
+      height: 2px;
+      background: var(--red);
+      transition: width 0.3s ease;
+      width: 0%;
+      margin: auto;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* === DROPDOWN === */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: var(--black);
+      border: 1px solid var(--gold);
+      min-width: 160px;
+      z-index: 1000;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: var(--gold);
+      text-align: left;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #1a1a1a;
+      color: var(--red);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* === MAIN STYLES === */
+    main {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    section {
+      margin-bottom: 3rem;
+      padding-left: 1rem;
+      border-left: 3px solid rgba(204, 0, 0, 0.2);
+    }
+
+    h2 {
+      color: var(--gold);
+      border-bottom: 2px solid rgba(204, 0, 0, 0.4);
+      display: inline-block;
+      padding-bottom: 0.2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background: var(--gold);
+      color: var(--black);
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      border: none;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #1a1a1a;
+      color: var(--gold);
+    }
+
+    iframe {
+      border: 2px solid var(--gold);
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(204, 0, 0, 0.3);
+      color: var(--white);
+    }
+
+    footer {
+      background: var(--black);
+      text-align: center;
+      padding: 1rem;
+      border-top: 2px solid var(--gold);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a::before {
+      content: "▶ ";
+      color: var(--red);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The Advocates Rise</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="tour.html">Tour</a></li>
+        <li><a href="shop.html">Shop</a></li>
+
+        <!-- DROPDOWN ITEM -->
+        <li class="dropdown">
+          <a href="fanclub.html">Fan Club</a>
+          <ul class="dropdown-content">
+            <li><a href="fanclub.html#join">Join</a></li>
+            <li><a href="fanclub.html#perks">Perks</a></li>
+            <li><a href="fanclub.html#members">Members</a></li>
+          </ul>
+        </li>
+
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Nothing here as of now</h2>
+      <p>Come Back Later for more details.</p>
+      
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 The Advocates Rise. All rights reserved.</p>
+    <p>
+      <a href="https://youtube.com/TheAdvocatesRise" target="_blank">YouTube</a>
+    </p>
+  </footer>
+</body>
+</html>
