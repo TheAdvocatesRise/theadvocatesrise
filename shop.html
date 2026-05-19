@@ -18,6 +18,7 @@
       --gold: #FFD700;
       --red: #cc0000;
       --white: #f0f0f0;
+      --dark-gray: #121212;
     }
 
     body {
@@ -70,7 +71,7 @@
       font-weight: bold;
       padding: 0.5rem;
       display: inline-block;
-      font-family: 'Orbitron', sans-serif; /* Keeps nav in Orbitron */
+      font-family: 'Orbitron', sans-serif;
     }
 
     nav a::after {
@@ -138,6 +139,66 @@
       padding-bottom: 0.2rem;
     }
 
+    /* === SHOP LAYOUT STYLES === */
+    .shop-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    .bandcamp-window {
+      margin-bottom: 3rem;
+    }
+
+    .bandcamp-window iframe {
+      border: 2px solid var(--gold);
+      border-radius: 8px;
+      max-width: 700px;
+      width: 100%;
+      height: 420px;
+    }
+
+    .merch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .product-card {
+      background: var(--dark-gray);
+      border: 1px solid rgba(255, 215, 0, 0.3);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+    }
+
+    .product-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .product-card h3 {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--gold);
+      margin: 0 0 0.5rem 0;
+      font-size: 1.2rem;
+    }
+
+    .product-card p {
+      font-size: 0.9rem;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
     .btn {
       display: inline-block;
       padding: 0.6rem 1.2rem;
@@ -148,28 +209,12 @@
       font-weight: bold;
       border: none;
       transition: background 0.3s ease, color 0.3s ease;
+      font-family: 'Orbitron', sans-serif;
     }
 
     .btn:hover {
-      background: #1a1a1a;
-      color: var(--gold);
-    }
-
-    iframe {
-      border: 2px solid var(--gold);
-      border-radius: 8px;
-      margin-top: 1rem;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    li {
-      padding: 0.5rem 0;
-      border-bottom: 1px solid rgba(204, 0, 0, 0.3);
-      color: var(--white);
+      background: var(--white);
+      color: var(--black);
     }
 
     footer {
@@ -184,6 +229,7 @@
       color: var(--gold);
       text-decoration: none;
       font-weight: bold;
+      margin: 0 10px;
     }
 
     footer a::before {
@@ -216,12 +262,80 @@
       </ul>
     </nav>
   </header>
+
   <main>
-    <section>
-      <h2>Nothing here as of now</h2>
-      <p>Come Back Later for more details.</p>
+    <div class="shop-container">
       
-    </section>
+      <!-- === BANDCAMP EMBED WINDOW === -->
+      <section class="bandcamp-window">
+        <h2>Featured Music Store</h2>
+        <p>Stream our tracks and purchase direct digital audio downloads below.</p>
+        <!-- Replace the URL inside src="..." with your actual Bandcamp album/track embed link -->
+        <iframe src="https://bandcamp.com" seamless><a href="https://theadvocatesrise.bandcamp.com">The Advocates Rise Store</a></iframe>
+      </section>
+
+      <!-- === MERCHANDISE & SHEET MUSIC GRID === -->
+      <section>
+        <h2>Official Band Merchandise</h2>
+        <p>Get your gear, apparel, and official sheet music bundles.</p>
+        
+        <div class="merch-grid">
+          
+          <!-- Item 1: Sheet Music -->
+          <div class="product-card">
+            <div>
+              <div class="product-icon">🎼</div>
+              <h3>Sheet Music & Tabs</h3>
+              <p>Official interactive songbooks, tabs, and full score PDFs.</p>
+            </div>
+            <!-- Update href with your specific Bandcamp item URL -->
+            <a href="https://theadvocatesrise.bandcamp.com" target="_blank" class="btn">Buy Tab Book</a>
+          </div>
+
+          <!-- Item 2: Shirts -->
+          <div class="product-card">
+            <div>
+              <div class="product-icon">👕</div>
+              <h3>Official Shirts</h3>
+              <p>High-quality screenprinted logos and custom variant artwork.</p>
+            </div>
+            <a href="https://bandcamp.com" target="_blank" class="btn">View Shirts</a>
+          </div>
+
+          <!-- Item 3: Hats & Beanies -->
+          <div class="product-card">
+            <div>
+              <div class="product-icon">🧢</div>
+              <h3>Hats & Headwear</h3>
+              <p>Embroidered snapbacks and warm winter beanies.</p>
+            </div>
+            <a href="https://bandcamp.com" target="_blank" class="btn">View Hats</a>
+          </div>
+
+          <!-- Item 4: Pants -->
+          <div class="product-card">
+            <div>
+              <div class="product-icon">🩳</div>
+              <h3>Pants & Joggers</h3>
+              <p>Comfortable band joggers styled for backstage or daily wear.</p>
+            </div>
+            <a href="https://bandcamp.com" target="_blank" class="btn">View Pants</a>
+          </div>
+
+          <!-- Item 5: Custom Picks -->
+          <div class="product-card">
+            <div>
+              <div class="product-icon">🎸</div>
+              <h3>Guitar Picks</h3>
+              <p>Heavy duty custom gauge guitar picks with our custom logo.</p>
+            </div>
+            <a href="https://bandcamp.com" target="_blank" class="btn">Get Picks</a>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
   </main>
 
   <footer>
