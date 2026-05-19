@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Official website for The Advocates Rise">
-  <title>The Advocates Rise | Fanclub</title>
+  <title>The Advocates Rise | Fan Club</title>
   <link rel="stylesheet" href="css/style.css" />
   
   <!-- GOOGLE FONTS: Orbitron & Rock Salt -->
@@ -18,6 +18,7 @@
       --gold: #FFD700;
       --red: #cc0000;
       --white: #f0f0f0;
+      --dark-gray: #121212;
     }
 
     body {
@@ -70,7 +71,7 @@
       font-weight: bold;
       padding: 0.5rem;
       display: inline-block;
-      font-family: 'Orbitron', sans-serif; /* Keeps nav in Orbitron */
+      font-family: 'Orbitron', sans-serif;
     }
 
     nav a::after {
@@ -123,10 +124,12 @@
     main {
       padding: 2rem;
       text-align: center;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
     section {
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
       padding-left: 1rem;
       border-left: 3px solid rgba(204, 0, 0, 0.2);
     }
@@ -136,6 +139,121 @@
       border-bottom: 2px solid rgba(204, 0, 0, 0.4);
       display: inline-block;
       padding-bottom: 0.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-desc {
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
+      color: #b3b3b3;
+      line-height: 1.6;
+    }
+
+    /* === PERKS LAYOUT === */
+    .perks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .perk-card {
+      background: var(--dark-gray);
+      border: 1px solid rgba(204, 0, 0, 0.3);
+      border-radius: 6px;
+      padding: 1.5rem;
+    }
+
+    .perk-card h3 {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--gold);
+      margin: 0 0 0.5rem 0;
+      font-size: 1.1rem;
+    }
+
+    .perk-card p {
+      font-size: 0.9rem;
+      margin: 0;
+      color: var(--white);
+    }
+
+    /* === TIERS/JOIN LAYOUT === */
+    .tier-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .tier-card {
+      background: var(--dark-gray);
+      border: 2px solid var(--gold);
+      border-radius: 8px;
+      padding: 2rem;
+      width: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.1);
+    }
+
+    .tier-card.premium {
+      border-color: var(--red);
+      box-shadow: 0 4px 15px rgba(204, 0, 0, 0.2);
+    }
+
+    .tier-price {
+      font-size: 1.8rem;
+      color: var(--white);
+      font-weight: bold;
+      margin: 1rem 0;
+    }
+
+    .tier-card ul {
+      margin: 1.5rem 0;
+      text-align: left;
+    }
+
+    .tier-card li {
+      border: none;
+      padding: 0.3rem 0;
+      font-size: 0.85rem;
+    }
+
+    .tier-card li::before {
+      content: "✓ ";
+      color: var(--gold);
+    }
+
+    .tier-card.premium li::before {
+      color: var(--red);
+    }
+
+    /* === MEMBERS WALL === */
+    .members-wall {
+      background: var(--dark-gray);
+      padding: 2rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 215, 0, 0.1);
+    }
+
+    .member-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: bold;
+      color: var(--gold);
+    }
+
+    .member-name {
+      background: rgba(204, 0, 0, 0.1);
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      border: 1px solid rgba(204, 0, 0, 0.3);
+      font-size: 0.9rem;
     }
 
     .btn {
@@ -148,28 +266,22 @@
       font-weight: bold;
       border: none;
       transition: background 0.3s ease, color 0.3s ease;
+      font-family: 'Orbitron', sans-serif;
     }
 
     .btn:hover {
-      background: #1a1a1a;
-      color: var(--gold);
+      background: var(--white);
+      color: var(--black);
     }
 
-    iframe {
-      border: 2px solid var(--gold);
-      border-radius: 8px;
-      margin-top: 1rem;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    li {
-      padding: 0.5rem 0;
-      border-bottom: 1px solid rgba(204, 0, 0, 0.3);
+    .btn-red {
+      background: var(--red);
       color: var(--white);
+    }
+
+    .btn-red:hover {
+      background: var(--white);
+      color: var(--black);
     }
 
     footer {
@@ -184,6 +296,7 @@
       color: var(--gold);
       text-decoration: none;
       font-weight: bold;
+      margin: 0 10px;
     }
 
     footer a::before {
@@ -216,12 +329,85 @@
       </ul>
     </nav>
   </header>
+
   <main>
-    <section>
-      <h2>Nothing here as of now</h2>
-      <p>Come Back Later for more details.</p>
+    
+    <!-- === SECTION 1: PERKS === -->
+    <section id="perks">
+      <h2>Fan Club Perks</h2>
+      <p class="section-desc">Join the inner circle. As a member of the collective, you get full access to exclusive underground assets, updates, and privileges.</p>
       
+      <div class="perks-grid">
+        <div class="perk-card">
+          <h3>Early Access</h3>
+          <p>Hear early demo iterations and track layouts before they launch publically.</p>
+        </div>
+        <div class="perk-card">
+          <h3>Exclusive Gear</h3>
+          <p>Access custom variants of apparel, patches, and picks hidden from the main store.</p>
+        </div>
+        <div class="perk-card">
+          <h3>Secret Discord</h3>
+          <p>Chat directly with the crew and get real-time channel notifications.</p>
+        </div>
+        <div class="perk-card">
+          <h3>Free Tab Sheets</h3>
+          <p>Download free guitar and bass breakdown sheets for selected releases.</p>
+        </div>
+      </div>
     </section>
+
+    <!-- === SECTION 2: JOIN / TIERS === -->
+    <section id="join">
+      <h2>Choose Your Tier</h2>
+      <p class="section-desc">Support the movement. Select a subscription framework below to initiate your security access clearance.</p>
+      
+      <div class="tier-container">
+        <!-- Tier 1 -->
+        <div class="tier-card">
+          <div>
+            <h3>Initiate</h3>
+            <div class="tier-price">$3 / mo</div>
+            <p style="font-size: 0.85rem; color:#b3b3b3;">Essential club validation.</p>
+            <ul>
+              <li>Access to Fan Wall</li>
+              <li>Early concert updates</li>
+              <li>Exclusive text updates</li>
+            </ul>
+          </div>
+          <a href="https://patreon.com" target="_blank" class="btn">Enlist Now</a>
+        </div>
+
+        <!-- Tier 2 -->
+        <div class="tier-card premium">
+          <div>
+            <h3>Vanguard</h3>
+            <div class="tier-price">$8 / mo</div>
+            <p style="font-size: 0.85rem; color:#b3b3b3;">Elite clearance level.</p>
+            <ul>
+              <li>Everything in Initiate</li>
+              <li>10% off all shop merch</li>
+              <li>Private Discord channels</li>
+              <li>Free digital audio demos</li>
+            </ul>
+          </div>
+          <a href="https://patreon.com" target="_blank" class="btn btn-red">Join Vanguard</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- === SECTION 3: MEMBERS === -->
+    <section id="members">
+      <h2>The Collective Members</h2>
+      <p class="section-desc">Shouting out the frontline fighters keeping the volume high. We see you.</p>
+      
+      <div class="members-wall">
+        <div class="member-list">
+          <span class="member-name">None</span>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer>
