@@ -6,8 +6,12 @@
   <meta name="description" content="Official website for The Advocates Rise">
   <title>The Advocates Rise</title>
   <link rel="stylesheet" href="css/style.css" />
+  
+  <!-- GOOGLE FONTS: Orbitron & Rock Salt -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://googleapis.com" rel="stylesheet">
+
   <style>
     :root {
       --black: #000;
@@ -21,6 +25,11 @@
       margin: 0;
       background: var(--black);
       color: var(--white);
+    }
+
+    /* === TARGET ALL HEADERS TO USE ROCK SALT === */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Rock Salt', cursive;
     }
 
     header {
@@ -61,6 +70,7 @@
       font-weight: bold;
       padding: 0.5rem;
       display: inline-block;
+      font-family: 'Orbitron', sans-serif; /* Keeps nav in Orbitron */
     }
 
     nav a::after {
@@ -206,7 +216,6 @@
       </ul>
     </nav>
   </header>
-
   <main>
     <section>
       <h2>Nothing here as of now</h2>
