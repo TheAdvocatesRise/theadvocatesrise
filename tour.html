@@ -18,6 +18,7 @@
       --gold: #FFD700;
       --red: #cc0000;
       --white: #f0f0f0;
+      --dark-gray: #121212;
     }
 
     body {
@@ -70,7 +71,7 @@
       font-weight: bold;
       padding: 0.5rem;
       display: inline-block;
-      font-family: 'Orbitron', sans-serif; /* Keeps nav in Orbitron */
+      font-family: 'Orbitron', sans-serif;
     }
 
     nav a::after {
@@ -123,10 +124,12 @@
     main {
       padding: 2rem;
       text-align: center;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     section {
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
       padding-left: 1rem;
       border-left: 3px solid rgba(204, 0, 0, 0.2);
     }
@@ -136,8 +139,61 @@
       border-bottom: 2px solid rgba(204, 0, 0, 0.4);
       display: inline-block;
       padding-bottom: 0.2rem;
+      margin-bottom: 2rem;
     }
 
+    /* === TOUR LIST LAYOUT === */
+    .tour-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .tour-row {
+      background: var(--dark-gray);
+      border: 1px solid rgba(255, 215, 0, 0.15);
+      border-radius: 6px;
+      padding: 1.2rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      text-align: left;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .tour-row:hover {
+      border-color: var(--gold);
+      transform: scale(1.01);
+    }
+
+    .tour-date {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--red);
+      min-width: 120px;
+    }
+
+    .tour-venue-city {
+      flex: 2;
+    }
+
+    .tour-venue {
+      font-size: 1.2rem;
+      color: var(--white);
+      margin-bottom: 0.2rem;
+    }
+
+    .tour-city {
+      font-size: 0.9rem;
+      color: #b3b3b3;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* === BUTTONS & BADGES === */
     .btn {
       display: inline-block;
       padding: 0.6rem 1.2rem;
@@ -148,28 +204,44 @@
       font-weight: bold;
       border: none;
       transition: background 0.3s ease, color 0.3s ease;
+      font-family: 'Orbitron', sans-serif;
+      text-align: center;
+      min-width: 110px;
     }
 
     .btn:hover {
-      background: #1a1a1a;
-      color: var(--gold);
+      background: var(--white);
+      color: var(--black);
     }
 
-    iframe {
-      border: 2px solid var(--gold);
-      border-radius: 8px;
-      margin-top: 1rem;
+    .badge-soldout {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background: rgba(204, 0, 0, 0.15);
+      color: var(--red);
+      border: 1px solid var(--red);
+      border-radius: 5px;
+      font-weight: bold;
+      font-family: 'Orbitron', sans-serif;
+      text-align: center;
+      min-width: 110px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
+    /* === PAST SHOWS TRACKER === */
+    .past-row {
+      opacity: 0.5;
+      border-color: rgba(255, 215, 0, 0.05);
+    }
+    
+    .past-row .tour-date {
+      color: #777;
     }
 
-    li {
-      padding: 0.5rem 0;
-      border-bottom: 1px solid rgba(204, 0, 0, 0.3);
-      color: var(--white);
+    .past-row:hover {
+      border-color: rgba(255, 215, 0, 0.2);
+      transform: none;
     }
 
     footer {
@@ -184,11 +256,27 @@
       color: var(--gold);
       text-decoration: none;
       font-weight: bold;
+      margin: 0 10px;
     }
 
     footer a::before {
       content: "▶ ";
       color: var(--red);
+    }
+
+    /* Responsive Adjustments for Mobile Screen Breakpoints */
+    @media (max-width: 600px) {
+      .tour-row {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+      }
+      .tour-venue-city {
+        flex: none;
+      }
+      .btn, .badge-soldout {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -216,11 +304,68 @@
       </ul>
     </nav>
   </header>
+
   <main>
+    
+    <!-- === SECTION 1: UPCOMING LIVE SHOWS === -->
     <section>
-      <h2>Nothing here as of now</h2>
-      <p>Come Back Later for more details.</p>
+      <h2>Upcoming Shows</h2>
+      <p style="color: #b3b3b3; margin-bottom: 2rem;">Catch the sonic energy live. New campaign updates drop continuously.</p>
+      
+      <div class="tour-list">
+        
+        <!-- Live Show Row 1: Active Tickets -->
+        <!--<div class="tour-row">
+          <div class="tour-date">OCT 14, 2026</div>
+          <div class="tour-venue-city">
+            <div class="tour-venue">The Underground Lounge</div>
+            <div class="tour-city">Orlando, FL</div>
+          </div>
+          <a href="https://ticketmaster.com" target="_blank" class="btn">Tickets</a>
+        </div>-->
+
+        <!-- Live Show Row 2: Sold Out -->
+        <!--<div class="tour-row">
+          <div class="tour-date">NOV 02, 2026</div>
+          <div class="tour-venue-city">
+            <div class="tour-venue">The Foundry Stage</div>
+            <div class="tour-city">Atlanta, GA</div>
+          </div>
+          <span class="badge-soldout">Sold Out</span>
+        </div>-->
+
+        <!-- Live Show Row 3: Placeholder / To Be Decided -->
+        <div class="tour-row">
+          <div class="tour-date">TBD</div>
+          <div class="tour-venue-city">
+            <div class="tour-venue">To Be Announced Soon</div>
+            <div class="tour-city">Stay Tuned</div>
+          </div>
+          <button class="btn" style="opacity: 0.4; cursor: not-allowed;" disabled>Locked</button>
+        </div>
+
+      </div>
     </section>
+
+    <!-- === SECTION 2: PAST MISSIONS ARCHIVE === -->
+    <section>
+      <h2>Past Archive</h2>
+      <p style="color: #777; margin-bottom: 2rem;">History logs from historical operations across the sector.</p>
+      
+      <div class="tour-list">
+        
+        <div class="tour-row past-row">
+          <div class="tour-date">N/A</div>
+          <div class="tour-venue-city">
+            <div class="tour-venue">N/A</div>
+            <div class="tour-city">N/A</div>
+          </div>
+          <span class="badge-soldout" style="color: #777; border-color: #444; background: none;">N/A</span>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
   <footer>
@@ -228,6 +373,7 @@
     <p>
       <a href="https://youtube.com/@TheAdvocatesRise" target="_blank">YouTube</a>
       <a href="https://theadvocatesrise.bandcamp.com" target="_blank">Bandcamp</a>
+      <a href="https://bandlab.com/theadvocatesrise" target="_blank">Bandlab</a>
     </p>
   </footer>
 </body>
