@@ -207,6 +207,7 @@
       background: rgba(255, 215, 0, 0.05);
     }
 
+    /* === UNIVERSAL FOOTER ID APPLIED HERE === */
     footer {
       background: var(--black);
       text-align: center;
@@ -263,10 +264,7 @@
         All corporate proposals, scheduling availability requests, festival bookings, or media and interview coordination are filtered via an external database infrastructure. General fan communications sent through this link are automatically purged by security firewalls.
       </p>
       
-      <!-- Replace the placeholder link inside href="..." below with your official Google Form URL link -->
-      <a href="https://google.com" 
-         target="_blank" 
-         class="btn">
+      <a href="https://google.com" target="_blank" class="btn">
         Access Secure Form
       </a>
     </section>
@@ -288,13 +286,18 @@
 
   </main>
 
-  <footer>
-    <p>&copy; 2025 The Advocates Rise. All rights reserved.</p>
-    <p>
-      <a href="https://youtube.com/@TheAdvocatesRise" target="_blank">YouTube</a>
-      <a href="https://theadvocatesrise.bandcamp.com" target="_blank">Bandcamp</a>
-      <a href="https://bandlab.com/theadvocatesrise" target="_blank">Bandlab</a>
-    </p>
-  </footer>
+  <!-- Empty container element ready for script processing injection -->
+  <footer id="universal-footer"></footer>
+
+  <!-- === UNIVERSAL INJECTION FETCH ENGINE === -->
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('universal-footer').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading universal footer:', error));
+  </script>
+
 </body>
 </html>
