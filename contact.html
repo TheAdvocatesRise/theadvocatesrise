@@ -18,6 +18,7 @@
       --gold: #FFD700;
       --red: #cc0000;
       --white: #f0f0f0;
+      --dark-gray: #121212;
     }
 
     body {
@@ -70,7 +71,7 @@
       font-weight: bold;
       padding: 0.5rem;
       display: inline-block;
-      font-family: 'Orbitron', sans-serif; /* Keeps nav in Orbitron */
+      font-family: 'Orbitron', sans-serif;
     }
 
     nav a::after {
@@ -123,12 +124,18 @@
     main {
       padding: 2rem;
       text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     section {
-      margin-bottom: 3rem;
-      padding-left: 1rem;
-      border-left: 3px solid rgba(204, 0, 0, 0.2);
+      margin-bottom: 4rem;
+      padding: 2rem;
+      background: var(--dark-gray);
+      border-radius: 8px;
+      border: 1px solid rgba(255, 215, 0, 0.1);
+      border-left: 4px solid var(--red);
+      text-align: center;
     }
 
     h2 {
@@ -136,11 +143,30 @@
       border-bottom: 2px solid rgba(204, 0, 0, 0.4);
       display: inline-block;
       padding-bottom: 0.2rem;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    .warning-text {
+      color: var(--red);
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+
+    .info-desc {
+      color: #b3b3b3;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
+      font-size: 0.9rem;
     }
 
     .btn {
       display: inline-block;
-      padding: 0.6rem 1.2rem;
+      padding: 0.8rem 1.8rem;
       background: var(--gold);
       color: var(--black);
       text-decoration: none;
@@ -148,28 +174,37 @@
       font-weight: bold;
       border: none;
       transition: background 0.3s ease, color 0.3s ease;
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .btn:hover {
-      background: #1a1a1a;
-      color: var(--gold);
+      background: var(--white);
+      color: var(--black);
     }
 
-    iframe {
-      border: 2px solid var(--gold);
-      border-radius: 8px;
-      margin-top: 1rem;
+    /* === SOCIAL LINKS GRID === */
+    .community-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    li {
-      padding: 0.5rem 0;
-      border-bottom: 1px solid rgba(204, 0, 0, 0.3);
+    .community-box {
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      padding: 1rem;
+      border-radius: 6px;
       color: var(--white);
+      text-decoration: none;
+      font-weight: bold;
+      transition: border-color 0.3s, background 0.3s;
+    }
+
+    .community-box:hover {
+      border-color: var(--gold);
+      background: rgba(255, 215, 0, 0.05);
     }
 
     footer {
@@ -184,6 +219,7 @@
       color: var(--gold);
       text-decoration: none;
       font-weight: bold;
+      margin: 0 10px;
     }
 
     footer a::before {
@@ -216,12 +252,40 @@
       </ul>
     </nav>
   </header>
+
   <main>
+    
+    <!-- === BUSINESSS HUB PORTAL === -->
     <section>
-      <h2>Nothing here as of now</h2>
-      <p>Come Back Later for more details.</p>
+      <h2>Business Inquiries</h2>
+      <div class="warning-text">Strictly for Booking, Press, and Corporate Operations</div>
+      <p class="info-desc">
+        All corporate proposals, scheduling availability requests, festival bookings, or media and interview coordination are filtered via an external database infrastructure. General fan communications sent through this link are automatically purged by security firewalls.
+      </p>
       
+      <!-- Replace the placeholder link inside href="..." below with your official Google Form URL link -->
+      <a href="https://google.com" 
+         target="_blank" 
+         class="btn">
+        Access Secure Form
+      </a>
     </section>
+
+    <!-- === REDIRECTION GATEWAY FOR FANS === -->
+    <section style="border-left: 4px solid var(--gold);">
+      <h2>Fan Intercom Links</h2>
+      <p class="info-desc">
+        Want to share feedback, review a track, submit digital assets, or chat with the crew? We interact regularly with the community network inside our managed fan matrix links below.
+      </p>
+      
+      <div class="community-grid">
+        <a href="fanclub.html" class="community-box">Patreon Wall</a>
+        <a href="https://youtube.com/@TheAdvocatesRise" target="_blank" class="community-box">YouTube</a>
+        <a href="https://theadvocatesrise.bandcamp.com" target="_blank" class="community-box">Bandcamp</a>
+        <a href="https://discord.com" target="_blank" class="community-box">Discord Server</a>
+      </div>
+    </section>
+
   </main>
 
   <footer>
@@ -229,6 +293,7 @@
     <p>
       <a href="https://youtube.com/@TheAdvocatesRise" target="_blank">YouTube</a>
       <a href="https://theadvocatesrise.bandcamp.com" target="_blank">Bandcamp</a>
+      <a href="https://bandlab.com/theadvocatesrise" target="_blank">Bandlab</a>
     </p>
   </footer>
 </body>
