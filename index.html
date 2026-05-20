@@ -244,12 +244,17 @@
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 The Advocates Rise. All rights reserved.</p>
-    <p>
-      <a href="https://youtube.com/@TheAdvocatesRise" target="_blank">YouTube</a>
-      <a href="https://theadvocatesrise.bandcamp.com" target="_blank">Bandcamp</a>
-    </p>
-  </footer>
+  <!-- Empty container element ready for script processing injection -->
+  <footer id="universal-footer"></footer>
+
+  <!-- === UNIVERSAL INJECTION FETCH ENGINE === -->
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('universal-footer').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading universal footer:', error));
+  </script>
 </body>
 </html>
